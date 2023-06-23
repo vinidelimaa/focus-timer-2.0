@@ -1,0 +1,136 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%;
+
+  --base-color: 240;
+
+  --ff: "Roboto", sans-serif;
+  --fc: hsla(var(--base-color), 6%, 21%, 1);
+  --bg-c: hsl(0, 0%, 90%);
+  --btn-off-c: hsla(var(--base-color), 9%, 89%, 1);
+  --btn-on-c: hsla(194, 97%, 31%, 1);
+  --btn-c: hsla(var(--base-color), 30%, 5%, 0.8);
+}
+
+body {
+  min-height: 100vh;
+  min-width: 100vw;
+
+  background-color: var(--bg-c);
+  color: var(--fc);
+
+  font-family: var(--ff);
+  font-size: 12.6rem;
+  line-height: 14.8rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+main {
+  max-width: 80rem;
+  margin: 0 auto;
+
+  display: flex;
+  gap: clamp(5rem, -18.1818rem + 22.7273vw, 20rem);
+}
+
+#timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+
+  max-width: 30rem;
+}
+
+#clock {
+  display: flex;
+}
+
+#controls {
+  display: flex;
+  gap: 4rem;
+}
+
+#controls svg {
+  max-width: 4.8rem;
+  max-height: 4.8rem;
+}
+
+#sounds {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.2rem;
+
+  max-width: 30rem;
+}
+
+.invert {
+  filter: invert(1);
+}
+
+#sounds div {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+
+  min-width: 13rem;
+  min-height: 15rem;
+
+  background-color: var(--btn-off-c);
+  border-radius: 2.4rem;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+button i {
+  font-size: 6.3rem;
+  color: var(--btn-c);
+}
+
+@keyframes clicking {
+  from {
+    opacity: 0.8;
+  }
+  to {
+    opacity: 0.6;
+  }
+}
+
+button:hover,
+#sounds div:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  animation: clicking 0.1s ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: 1020px) {
+  main {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 720px) {
+  #sounds {
+    gap: clamp(1rem, -14.4rem + 24.4444vw, 3.2rem);
+  }
+}
+
+.hide {
+  display: none;
+  opacity: 0;
+}
