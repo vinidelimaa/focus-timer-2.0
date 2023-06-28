@@ -74,10 +74,6 @@ main {
   max-width: 30rem;
 }
 
-.invert {
-  filter: invert(1);
-}
-
 #sounds div {
   display: grid;
   align-items: center;
@@ -88,6 +84,11 @@ main {
 
   background-color: var(--btn-off-c);
   border-radius: 2.4rem;
+}
+
+#sounds .invert {
+  filter: invert(1);
+  background-color: rgb(186, 186, 186);
 }
 
 button {
