@@ -10,12 +10,7 @@ const buttonFire = document.querySelector(".fire")
 const minutesDisplay = document.querySelector(".minutes")
 const secondsDisplay = document.querySelector(".seconds")
 const buttonDarkMode = document.querySelector(".moon i")
-
-// const div = document.querySelector("div")
 const input = document.querySelector("input")
-
-
-
 
 // volume
 
