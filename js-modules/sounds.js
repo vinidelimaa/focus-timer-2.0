@@ -1,3 +1,39 @@
+// const allSounds = {
+//   forest: new Audio("./sounds/forest.wav"),
+//   cloudy: new Audio("./sounds/cloudy.wav"),
+//   cafe: new Audio("./sounds/cafe.wav"),
+//   fire: new Audio("./sounds/fire.wav"),
+// }
+
+// function playSound(file) {
+//   allSounds[file].play()
+// }
+
+// function pauseAllAudios() {
+//   for (const audio in allSounds) {
+//     allSounds[audio].pause()
+//   }
+// }
+
+// function forestSound() {
+//   playSound("forest")
+// }
+
+// function cloudySound() {
+//   playSound("cloudy")
+// }
+
+// function cafeSound() {
+//   playSound("cafe")
+// }
+
+// function fireSound() {
+//   playSound("fire")
+// }
+
+// export { forestSound, cloudySound, fireSound, cafeSound, pauseAllAudios }
+
+
 let currentSound = null
 
 function toggleSound(file) {
@@ -26,5 +62,3 @@ function cafeSound() {
 function fireSound() {
   toggleSound("./sounds/fire.wav")
 }
-
-export { forestSound, cloudySound, fireSound, cafeSound }

@@ -1,15 +1,15 @@
 let updateNewMinutes = 0
 
-function darkMode(buttonDarkModeSun, buttonDarkModeMoon, body) {
-  buttonDarkModeSun.classList.toggle("hide")
-  buttonDarkModeMoon.classList.toggle("hide")
-  body.classList.toggle("dark-mode")
-}
+function darkMode(buttonDarkMode) {
+  document.body.classList.toggle("dark-mode")
 
-function lightMode(buttonDarkModeSun, buttonDarkModeMoon, body) {
-  buttonDarkModeSun.classList.toggle("hide")
-  buttonDarkModeMoon.classList.toggle("hide")
-  body.classList.toggle("dark-mode")
+  if (document.body.classList.contains("dark-mode")) {
+    buttonDarkMode.classList.add("ph-sun")
+    buttonDarkMode.classList.remove("ph-moon")
+  } else {
+    buttonDarkMode.classList.remove("ph-sun")
+    buttonDarkMode.classList.add("ph-moon")
+  }
 }
 
 function play(buttonPlay, buttonPause) {
@@ -99,5 +99,4 @@ export {
   buttonCafeReset,
   buttonFireReset,
   darkMode,
-  lightMode,
 }

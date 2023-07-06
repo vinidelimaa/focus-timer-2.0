@@ -1,5 +1,11 @@
 import { reset, countdown, hold } from "./timer.js"
-import { forestSound, cloudySound, fireSound, cafeSound } from "./sounds.js"
+import {
+  forestSound,
+  cloudySound,
+  fireSound,
+  cafeSound,
+  pauseAllAudios,
+} from "./sounds.js"
 import {
   buttonPlay,
   buttonStop,
@@ -11,9 +17,7 @@ import {
   buttonFire,
   buttonPause,
   minutesDisplay,
-  buttonDarkModeSun,
-  buttonDarkModeMoon,
-  body,
+  buttonDarkMode,
 } from "./elements.js"
 import {
   play,
@@ -30,19 +34,14 @@ import {
   buttonCafeReset,
   buttonFireReset,
   darkMode,
-  lightMode,
 } from "./controls.js"
 
 export let minutes = Number(minutesDisplay.textContent)
 
 // controls
 
-buttonDarkModeSun.addEventListener("click", function () {
-  darkMode(buttonDarkModeSun, buttonDarkModeMoon, body)
-})
-
-buttonDarkModeMoon.addEventListener("click", function () {
-  lightMode(buttonDarkModeSun, buttonDarkModeMoon, body)
+buttonDarkMode.addEventListener("click", function () {
+  darkMode(buttonDarkMode)
 })
 
 buttonPlay.addEventListener("click", function () {
@@ -72,24 +71,24 @@ buttonReduce.addEventListener("click", function () {
 
 buttonForest.addEventListener("click", function () {
   forestActivate(buttonForest)
-  buttonForestReset(buttonFire, buttonCloudy, buttonCafe)
+  pauseAllAudios()
   forestSound()
 })
 
 buttonCloudy.addEventListener("click", function () {
   cloudyActivate(buttonCloudy)
-  buttonCloudyReset(buttonFire, buttonForest, buttonCafe)
+  pauseAllAudios()
   cloudySound()
 })
 
 buttonCafe.addEventListener("click", function () {
   cafeActivate(buttonCafe)
-  buttonCafeReset(buttonFire, buttonForest, buttonCloudy)
+  pauseAllAudios()
   cafeSound()
 })
 
 buttonFire.addEventListener("click", function () {
   fireActivate(buttonFire)
-  buttonFireReset(buttonCafe, buttonForest, buttonCloudy)
+  pauseAllAudios()
   fireSound()
 })

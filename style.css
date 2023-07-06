@@ -7,16 +7,19 @@
 :root {
   font-size: 62.5%;
 
-  --base-color: 240;
-
+  /* light theme */
   --ff: "Roboto", sans-serif;
-  --fc: hsla(var(--base-color), 6%, 21%, 1);
+  --fc: hsla(240, 6%, 21%, 1);
   --bg-c: hsl(0, 0%, 90%);
-  --btn-off-c: hsla(var(--base-color), 9%, 89%, 1);
+  --btn-off-c: hsla(240, 9%, 89%, 1);
   --btn-on-c: hsla(194, 97%, 31%, 1);
-  --btn-c: hsla(var(--base-color), 30%, 5%, 0.8);
+  --btn-c: hsla(240, 30%, 5%, 0.8);
 
-  color-scheme: light dark;
+  /* dark theme */
+  --dark-fc: hsl(0, 0%, 90%);
+  --dark-bg-c: #171717;
+  --dark-btn-off-c: hsla(240, 30%, 5%, 0.8);
+  --dark-btn-c: hsl(0, 0%, 90%);
 }
 
 body {
@@ -35,12 +38,6 @@ body {
   justify-content: center;
   text-align: center;
 }
-
-/* body.dark-mode {
-  filter: invert(1);
-
-  background-color: black;
-} */
 
 main {
   max-width: 80rem;
@@ -140,20 +137,9 @@ button:hover,
   }
 }
 
-/* @media (prefers-color-scheme: dark) {
-  body {
-    filter: invert(1);
-  }
-} */
-
 .hide {
   display: none;
   opacity: 0;
-}
-
-.dark-mode {
-  background-color: black;
-  filter: invert(1);
 }
 
 #sounds button.dark-mode {
@@ -161,6 +147,13 @@ button:hover,
 }
 
 #sounds button.invert {
-  filter: invert(1);
-  background-color: rgb(237, 171, 136);
+  --btn-c: hsl(0, 0%, 90%);
+  background-color: var(--btn-on-c);
+}
+
+body.dark-mode {
+  --bg-c: #171717;
+  --fc: hsl(0, 0%, 90%);
+  --btn-c: hsl(0, 0%, 90%);
+  --btn-off-c: hsl(0, 0%, 20%);
 }
