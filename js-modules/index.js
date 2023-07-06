@@ -21,6 +21,7 @@ import {
   cloudyVolume,
   cafeVolume,
   fireVolume,
+  input,
 } from "./elements.js"
 import {
   play,
@@ -79,7 +80,11 @@ buttonReduce.addEventListener("click", function () {
 
 // moods
 
-buttonForest.addEventListener("click", function () {
+buttonForest.addEventListener("click", function (event) {
+  if (event.target === input) {
+    return
+  }
+
   playSoundEffects("click")
   forestActivate(buttonForest)
   buttonForestReset(buttonFire, buttonCloudy, buttonCafe)
