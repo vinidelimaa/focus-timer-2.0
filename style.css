@@ -63,7 +63,7 @@ main {
   gap: 4rem;
 }
 
-#controls svg {
+#controls i {
   max-width: 4.8rem;
   max-height: 4.8rem;
 }
@@ -151,6 +151,29 @@ button:hover,
 
 @media (max-width: 720px) {
   #sounds {
+    gap: clamp(1rem, -14.4rem + 24.4444vw, 3.2rem);
+  }
+
+  #sounds button {
+    min-height: 7rem;
+    min-width: 7rem;
+    padding: 2rem;
+  }
+
+  #controls {
+    gap: clamp(1rem, -14.4rem + 24.4444vw, 3.2rem);
+  }
+
+  #controls i {
+    max-width: 2rem;
+    max-height: 2rem;
+  }
+
+  #clock span {
+    font-size: clamp(8rem, -14.4rem + 24.4444vw, 3.2rem);
+  }
+
+  #controls svg {
     gap: clamp(1rem, -14.4rem + 24.4444vw, 3.2rem);
   }
 }

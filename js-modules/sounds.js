@@ -3,9 +3,9 @@ function playSoundEffects(file) {
 }
 
 const effectSounds = {
-  start: new Audio("/sounds/start.mp3"),
+  start: new Audio("./sounds/start.mp3"),
   controls: new Audio("./sounds/controls.mp3"),
-  complete: new Audio("/sounds/complete.mp3"),
+  complete: new Audio("./sounds/complete.mp3"),
   click: new Audio(
     "https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true"
   ),
