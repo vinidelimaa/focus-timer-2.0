@@ -15,6 +15,8 @@
   --btn-off-c: hsla(var(--base-color), 9%, 89%, 1);
   --btn-on-c: hsla(194, 97%, 31%, 1);
   --btn-c: hsla(var(--base-color), 30%, 5%, 0.8);
+
+  color-scheme: light dark;
 }
 
 body {
@@ -34,12 +36,20 @@ body {
   text-align: center;
 }
 
+/* body.dark-mode {
+  filter: invert(1);
+
+  background-color: black;
+} */
+
 main {
   max-width: 80rem;
   margin: 0 auto;
 
   display: flex;
-  gap: clamp(5rem, -18.1818rem + 22.7273vw, 20rem);
+  gap: clamp(7rem, -18.1818rem + 22.7273vw, 20rem);
+
+  position: relative;
 }
 
 #timer {
@@ -74,7 +84,7 @@ main {
   max-width: 30rem;
 }
 
-#sounds div {
+#sounds button {
   display: grid;
   align-items: center;
   justify-items: center;
@@ -86,9 +96,17 @@ main {
   border-radius: 2.4rem;
 }
 
-#sounds .invert {
-  filter: invert(1);
-  background-color: rgb(186, 186, 186);
+#mode {
+  position: absolute;
+
+  right: 6rem;
+  top: 6rem;
+
+  display: flex;
+}
+
+#mode i {
+  font-size: 4.4rem;
 }
 
 button {
@@ -101,21 +119,12 @@ button i {
   color: var(--btn-c);
 }
 
-@keyframes clicking {
-  from {
-    opacity: 0.8;
-  }
-  to {
-    opacity: 0.6;
-  }
-}
-
 button:hover,
 #sounds div:hover {
   cursor: pointer;
-  transform: scale(1.05);
-  animation: clicking 0.1s ease-in-out;
+  transform: scale(0.95);
   animation-fill-mode: forwards;
+  transition: 0.1s ease-in-out;
 }
 
 @media (max-width: 1020px) {
@@ -131,7 +140,27 @@ button:hover,
   }
 }
 
+/* @media (prefers-color-scheme: dark) {
+  body {
+    filter: invert(1);
+  }
+} */
+
 .hide {
   display: none;
   opacity: 0;
+}
+
+.dark-mode {
+  background-color: black;
+  filter: invert(1);
+}
+
+#sounds button.dark-mode {
+  background-color: hsl(210, 46%, 43%);
+}
+
+#sounds button.invert {
+  filter: invert(1);
+  background-color: rgb(237, 171, 136);
 }

@@ -9,6 +9,9 @@ const buttonCafe = document.querySelector(".cafe")
 const buttonFire = document.querySelector(".fire")
 const minutesDisplay = document.querySelector(".minutes")
 const secondsDisplay = document.querySelector(".seconds")
+const buttonDarkModeSun = document.querySelector(".sun")
+const buttonDarkModeMoon = document.querySelector(".moon")
+const body = document.querySelector(".body")
 
 export {
   buttonPlay,
@@ -22,4 +25,7 @@ export {
   buttonFire,
   minutesDisplay,
   secondsDisplay,
+  buttonDarkModeSun,
+  buttonDarkModeMoon,
+  body,
 }

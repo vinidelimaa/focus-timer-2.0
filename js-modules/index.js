@@ -11,6 +11,9 @@ import {
   buttonFire,
   buttonPause,
   minutesDisplay,
+  buttonDarkModeSun,
+  buttonDarkModeMoon,
+  body,
 } from "./elements.js"
 import {
   play,
@@ -26,11 +29,21 @@ import {
   buttonCloudyReset,
   buttonCafeReset,
   buttonFireReset,
+  darkMode,
+  lightMode,
 } from "./controls.js"
 
 export let minutes = Number(minutesDisplay.textContent)
 
 // controls
+
+buttonDarkModeSun.addEventListener("click", function () {
+  darkMode(buttonDarkModeSun, buttonDarkModeMoon, body)
+})
+
+buttonDarkModeMoon.addEventListener("click", function () {
+  lightMode(buttonDarkModeSun, buttonDarkModeMoon, body)
+})
 
 buttonPlay.addEventListener("click", function () {
   play(buttonPlay, buttonPause)

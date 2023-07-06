@@ -1,5 +1,17 @@
 let updateNewMinutes = 0
 
+function darkMode(buttonDarkModeSun, buttonDarkModeMoon, body) {
+  buttonDarkModeSun.classList.toggle("hide")
+  buttonDarkModeMoon.classList.toggle("hide")
+  body.classList.toggle("dark-mode")
+}
+
+function lightMode(buttonDarkModeSun, buttonDarkModeMoon, body) {
+  buttonDarkModeSun.classList.toggle("hide")
+  buttonDarkModeMoon.classList.toggle("hide")
+  body.classList.toggle("dark-mode")
+}
+
 function play(buttonPlay, buttonPause) {
   buttonPlay.classList.toggle("hide")
   buttonPause.classList.toggle("hide")
@@ -86,4 +98,6 @@ export {
   buttonCloudyReset,
   buttonCafeReset,
   buttonFireReset,
+  darkMode,
+  lightMode,
 }
