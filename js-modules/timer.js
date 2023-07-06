@@ -5,6 +5,7 @@ import {
   buttonPause,
   buttonPlay,
 } from "./elements.js"
+import { playSoundEffects } from "./sounds.js"
 
 let timerTimeOut
 
@@ -29,6 +30,7 @@ function countdown() {
 
     if (seconds == 0 && minutes == 0) {
       resetControls(buttonPlay, buttonPause)
+      playSoundEffects("complete")
 
       return
     }

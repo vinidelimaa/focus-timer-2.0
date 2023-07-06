@@ -14,12 +14,7 @@
   --btn-off-c: hsla(240, 9%, 89%, 1);
   --btn-on-c: hsla(194, 97%, 31%, 1);
   --btn-c: hsla(240, 30%, 5%, 0.8);
-
-  /* dark theme */
-  --dark-fc: hsl(0, 0%, 90%);
-  --dark-bg-c: #171717;
-  --dark-btn-off-c: hsla(240, 30%, 5%, 0.8);
-  --dark-btn-c: hsl(0, 0%, 90%);
+  --input-c: hsla(240, 6%, 21%, 1);
 }
 
 body {
@@ -82,9 +77,12 @@ main {
 }
 
 #sounds button {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+
   align-items: center;
-  justify-items: center;
+  justify-content: center;
+  gap: 2.7rem;
 
   min-width: 13rem;
   min-height: 15rem;
@@ -114,6 +112,26 @@ button {
 button i {
   font-size: 6.3rem;
   color: var(--btn-c);
+}
+
+input {
+  appearance: none;
+  outline: none;
+  width: 58%;
+  height: 0.3rem;
+  background: var(--input-c);
+  border-radius: 1.5rem;
+  box-shadow: 5rem 5rem 5rem rgba(0, 0, 0, 0.1),
+    inset 5rem 5rem 5rem rgba(0, 0, 0, 0.1);
+}
+
+input::-webkit-slider-thumb {
+  cursor: pointer;
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: var(--input-c);
+  border-radius: 50%;
 }
 
 button:hover,
@@ -148,6 +166,7 @@ button:hover,
 
 #sounds button.invert {
   --btn-c: hsl(0, 0%, 90%);
+  --input-c: hsl(0, 0%, 90%);
   background-color: var(--btn-on-c);
 }
 
@@ -156,4 +175,5 @@ body.dark-mode {
   --fc: hsl(0, 0%, 90%);
   --btn-c: hsl(0, 0%, 90%);
   --btn-off-c: hsl(0, 0%, 20%);
+  --input-c: hsl(0, 0%, 90%);
 }

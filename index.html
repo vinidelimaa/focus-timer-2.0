@@ -21,9 +21,6 @@
   <body class="body">
     <nav>
       <div id="mode">
-        <!-- <button class="sun hide">
-          <i class="ph ph-sun"></i>
-        </button> -->
         <button class="moon">
           <i class="ph ph-moon"></i>
         </button>
@@ -60,18 +57,50 @@
       <section id="sounds">
         <button class="forest">
           <i class="ph ph-tree-evergreen"></i>
+          <input
+            type="range"
+            class="forest-volume"
+            min="0"
+            max="100"
+            value="50"
+            steps="1"
+          />
         </button>
 
         <button class="cloudy">
           <i class="ph ph-cloud-snow"></i>
+          <input
+            type="range"
+            class="cloudy-volume"
+            min="0"
+            max="100"
+            value="50"
+            steps="1"
+          />
         </button>
 
         <button class="cafe">
           <i class="ph ph-storefront"></i>
+          <input
+            type="range"
+            class="cafe-volume"
+            min="0"
+            max="100"
+            value="50"
+            steps="1"
+          />
         </button>
 
         <button class="fire">
           <i class="ph ph-flame"></i>
+          <input
+            type="range"
+            class="fire-volume"
+            min="0"
+            max="100"
+            value="50"
+            steps="1"
+          />
         </button>
       </section>
     </main>

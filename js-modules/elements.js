@@ -11,6 +11,13 @@ const minutesDisplay = document.querySelector(".minutes")
 const secondsDisplay = document.querySelector(".seconds")
 const buttonDarkMode = document.querySelector(".moon i")
 
+// volume
+
+const forestVolume = document.querySelector(".forest-volume")
+const cloudyVolume = document.querySelector(".cloudy-volume")
+const cafeVolume = document.querySelector(".cafe-volume")
+const fireVolume = document.querySelector(".fire-volume")
+
 export {
   buttonPlay,
   buttonPause,
@@ -24,4 +31,8 @@ export {
   minutesDisplay,
   secondsDisplay,
   buttonDarkMode,
+  forestVolume,
+  cloudyVolume,
+  cafeVolume,
+  fireVolume,
 }

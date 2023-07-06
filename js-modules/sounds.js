@@ -1,64 +1,44 @@
-// const allSounds = {
-//   forest: new Audio("./sounds/forest.wav"),
-//   cloudy: new Audio("./sounds/cloudy.wav"),
-//   cafe: new Audio("./sounds/cafe.wav"),
-//   fire: new Audio("./sounds/fire.wav"),
-// }
+function playSoundEffects(file) {
+  effectSounds[file].play()
+}
 
-// function playSound(file) {
-//   allSounds[file].play()
-// }
+const effectSounds = {
+  start: new Audio("/sounds/start.mp3"),
+  controls: new Audio("./sounds/controls.mp3"),
+  complete: new Audio("/sounds/complete.mp3"),
+  click: new Audio(
+    "https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true"
+  ),
+}
 
-// function pauseAllAudios() {
-//   for (const audio in allSounds) {
-//     allSounds[audio].pause()
-//   }
-// }
-
-// function forestSound() {
-//   playSound("forest")
-// }
-
-// function cloudySound() {
-//   playSound("cloudy")
-// }
-
-// function cafeSound() {
-//   playSound("cafe")
-// }
-
-// function fireSound() {
-//   playSound("fire")
-// }
-
-// export { forestSound, cloudySound, fireSound, cafeSound, pauseAllAudios }
-
-
-let currentSound = null
+const allSounds = {
+  forest: new Audio("./sounds/forest.wav"),
+  cloudy: new Audio("./sounds/cloudy.wav"),
+  cafe: new Audio("./sounds/cafe.wav"),
+  fire: new Audio("./sounds/fire.wav"),
+}
 
 function toggleSound(file) {
-  if (currentSound) {
-    currentSound.pause()
-    currentSound.currentTime = 0
-    currentSound = null
+  pauseNotChosenAudio(file)
+  // check if the chosen sound is already playing
+  if (allSounds[file].paused) {
+    allSounds[file].play()
   } else {
-    currentSound = new Audio(file)
-    currentSound.play()
+    allSounds[file].pause()
   }
 }
 
-function forestSound() {
-  toggleSound("./sounds/forest.wav")
+// pause all sounds while this is not the chosen sound
+function pauseNotChosenAudio(file) {
+  for (const sound in allSounds) {
+    if (sound != file) {
+      allSounds[sound].pause()
+    }
+  }
 }
 
-function cloudySound() {
-  toggleSound("./sounds/cloudy.wav")
+function setVolume(audio, volume) {
+  audio.volume = volume / 100
 }
 
-function cafeSound() {
-  toggleSound("./sounds/cafe.wav")
-}
-
-function fireSound() {
-  toggleSound("./sounds/fire.wav")
-}
+export { toggleSound, playSoundEffects, setVolume, allSounds }
